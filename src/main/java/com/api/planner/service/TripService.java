@@ -32,10 +32,11 @@ public class TripService {
         return this.tripRepository.save(trip);
     }
 
-
     public Trip confirmTrip(UUID id){
         Trip trip = this.tripRepository.findById(id).orElseThrow(() -> new TripNotFoundExeception("Trip Not Found"));
         trip.setIsConfirmed(true);
         return this.tripRepository.save(trip);
     }
+
+
 }
